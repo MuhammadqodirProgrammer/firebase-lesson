@@ -31,7 +31,7 @@ const googleProvider = new GoogleAuthProvider();
 const gitHubProvider = new GithubAuthProvider();
 
 export const singInWithGoogle = () => {
-  signInWithRedirect(auth, googleProvider);
+  signInWithPopup(auth, googleProvider);
 };
 
 export const singInWithGitHub = () => {
