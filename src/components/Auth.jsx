@@ -32,7 +32,6 @@ export const AuthComp = () => {
   };
 
   console.log(user);
-  
 
   return (
     <div>
@@ -62,6 +61,18 @@ export const AuthComp = () => {
 
       <div>
         <h2> User info: {user?.email || "no user"} </h2>
+        {user?.photoURL && (
+          <img
+            src={user?.photoURL}
+            alt="user photo"
+            width={200}
+            height={200}
+            style={{
+              borderRadius: "50%",
+              objectFit: "cover",
+            }}
+          />
+        )}
       </div>
     </div>
   );
