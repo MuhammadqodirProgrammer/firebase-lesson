@@ -1,0 +1,16 @@
+input , li {
+    width: 50%;
+    display: block;
+    margin: 10px auto;
+    padding: 10px;
+    
+}
+
+button {
+    margin: 20px auto;
+    display: block;
+}
+
+h1 , h2 , p {
+    text-align: center;
+}
