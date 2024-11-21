@@ -3,12 +3,14 @@ import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 
 import { getFirestore } from "firebase/firestore";
+import { getDatabase ,ref,onValue } from "firebase/database";
 import {
   getAuth,
   GoogleAuthProvider,
   signInWithPopup,
   GithubAuthProvider,
 } from "firebase/auth";
+import { getStorage } from "firebase/storage";
 
 // Your Firebase configuration
 const firebaseConfig = {
@@ -26,7 +28,7 @@ const app = initializeApp(firebaseConfig);
 
 export const db = getFirestore(app);
 export const auth = getAuth(app);
-
+export const storage = getStorage(app);
 const googleProvider = new GoogleAuthProvider();
 const gitHubProvider = new GithubAuthProvider();
 
@@ -46,8 +48,8 @@ export const singInWithGitHub = () => {
 
       // The signed-in user info.
       const user = result.user;
-      console.log(user ,"github user");
-      
+      console.log(user, "github user");
+
       // IdP data available using getAdditionalUserInfo(result)
       // ...
     })
@@ -64,3 +66,8 @@ export const singInWithGitHub = () => {
 };
 
 const analytics = getAnalytics(app);
+ export  const realTimeDb = getDatabase(app,'https://fir-lesson-3d0dc-default-rtdb.firebaseio.com')
+
+// var database = firebase.database();
+
+// export default database;
